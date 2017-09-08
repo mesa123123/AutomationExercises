@@ -23,7 +23,7 @@ public class DriveCarDrive {
         WebDriver Driver = BrowserLaunch.getBrowser();
         Driver.manage().window().maximize();
         Driver.get(baseURL);
-        WebElement searchBar = new WebDriverWait(Driver, 10).until(ExpectedConditions.presenceOfElementLocated(By.id("searchString")));;
+        WebElement searchBar = new WebDriverWait(Driver, 10).until(ExpectedConditions.presenceOfElementLocated(By.id("searchString")));
         searchBar.click();
         System.out.print("Ping");
         searchBar.sendKeys("Best " + carMake + " " + carType);
