@@ -1,4 +1,9 @@
+import java.io.BufferedInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.util.HashMap;
+import java.util.Scanner;
 
 /*
  * Created by mesa1 on 9/09/2017.
@@ -8,12 +13,15 @@ import java.util.HashMap;
  */
 public class CarClassificationCharacteristics {
     public HashMap carCharacteristics;
-    //this array should return the characteristics like this: bodystyle;make;model;pricerange;year;odometer;engineseize;doors;transmission; fuel;region;listingtype)
+//    this array should return the characteristics like this: bodystyle;make;model;pricerange;year;odometer;engineseize;doors;transmission; fuel;region;listingtype)
 
     //Constructor
-    public CarClassificationCharacteristics(boolean used){
+    public CarClassificationCharacteristics(boolean used) throws FileNotFoundException {
+        Scanner in = new Scanner(new BufferedInputStream(new FileInputStream(new File("data.txt"))));
+        String bodyStyle = in.next();
 
     }
+    //Getter Method
     public HashMap getCharacteristics(){
         return this.carCharacteristics;
     }

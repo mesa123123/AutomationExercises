@@ -6,6 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.FileNotFoundException;
+
 /**
  * Created by mesa1 on 6/09/2017.
  */
@@ -19,7 +21,7 @@ public class DriveCarDrive {
     private static final boolean used = true;
 
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) throws InterruptedException, FileNotFoundException {
         BrowserLaunch launcher = new BrowserLaunch(browserInTest, DriverLocation);
         WebDriver Driver = BrowserLaunch.getBrowser();
         Driver.manage().window().maximize();
