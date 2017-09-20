@@ -3,7 +3,7 @@
  */
 public class FindCar {
 
-    static void searchFind(String[] Characteristics, boolean used){
+    static void searchFind(String Characteristics, boolean used){
 
     }
 

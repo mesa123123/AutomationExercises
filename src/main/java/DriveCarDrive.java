@@ -7,6 +7,10 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.FileNotFoundException;
+import java.security.KeyStore;
+
+import static java.lang.Boolean.TRUE;
+
 
 /**
  * Created by mesa1 on 6/09/2017.
@@ -26,7 +30,7 @@ public class DriveCarDrive {
         WebDriver Driver = BrowserLaunch.getBrowser();
         Driver.manage().window().maximize();
         Driver.get(baseURL);
-        CarClassificationCharacteristics classifySearch = new CarClassificationCharacteristics(used);
+        FindCar.searchFind("Best" + carMake + carType, used);
         Driver.quit();
     }
 }
