@@ -1,4 +1,7 @@
+package Pages;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -18,7 +21,9 @@ public class TradeMeHomePage {
         homeButton.click();
     }
 
-    public static void Inputter(WebElement Element, String thingToSay){
+    public static void SearchInputter(WebElement Element, String thingToSay, boolean Confirm){
         Element.sendKeys(thingToSay);
+        if(Confirm);
+            Element.sendKeys(Keys.RETURN);
     }
 }

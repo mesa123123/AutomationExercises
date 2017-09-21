@@ -1,3 +1,5 @@
+package Pages;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
@@ -23,22 +25,18 @@ public class MotorsHome extends TradeMeHomePage {
             return driver.findElement(By.id("sidebarSearch"));
         }
 
-        public static WebElement BodyStyle(WebDriver driver){
-            return null;
-        }
+        public static WebElement BodyStyle(WebDriver driver){ return driver.findElement(By.id("5"));}
 
-        public static WebElement Model(WebDriver driver){
-            return null;
-        }
-
-        public static WebElement Make(WebDriver driver){
-            if(1==1/*check here to see if the model field has been entered: if you cannot make the menu drop down*/) {
-                //make the user enter the model and then they can be returned the make
+        public static WebElement CarMake(WebDriver driver){return driver.findElement(By.id("14"));}
+        //I'm unsure about how this works at mitigating errors, I think I'll need to come back to this one
+        public static WebElement CarModel(WebDriver driver){
+            WebElement modelBox = driver.findElement(By.id("15"));
+            if(!modelBox.isEnabled()){
+                return CarMake(driver);
             }
             else {
-                //just return the make
+                return modelBox;
             }
-            return null;
         }
 
         public static WebElement[] PriceRange(WebDriver driver){
