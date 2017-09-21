@@ -18,19 +18,16 @@ import static java.lang.Boolean.TRUE;
 public class DriveCarDrive {
     private static final BrowserType browserInTest = BrowserType.CHROME;
     private static final String Browser = "chromedriver";
-    private static final String DriverLocation = "src\\main\\resources\\"+ Browser +".exe";
-    private static final String baseURL = "https://www.trademe.co.nz/motors";
     private static final String carMake = "Audi";
     private static final String carType = "RS4";
     private static final boolean used = true;
 
 
     public static void main(String[] args) throws InterruptedException, FileNotFoundException {
-        BrowserLaunch launcher = new BrowserLaunch(browserInTest, DriverLocation);
+        BrowserLaunch launcher = new BrowserLaunch(browserInTest);
         WebDriver Driver = BrowserLaunch.getBrowser();
         Driver.manage().window().maximize();
-        Driver.get(baseURL);
-        FindCar.searchFind("Best" + carMake + carType, used);
+        Driver.get(TradeMeHomePage.baseURL);
         Driver.quit();
     }
 }

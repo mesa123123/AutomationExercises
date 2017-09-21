@@ -4,9 +4,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
-
-import java.sql.Driver;
+import org.openqa.selenium.remote.DesiredCapabilities;;
 
 /**
  * Created by mesa1 on 7/09/2017.
@@ -17,18 +15,18 @@ public class BrowserLaunch {
     //Webdriver that will be returned to the main thread
     public static WebDriver mainDriver;
     //Constructor
-    public BrowserLaunch(BrowserType Browser, String DriverLocation){
+    public BrowserLaunch(BrowserType Browser){
         if(Browser == BrowserType.CHROME){
-            mainDriver = launchChrome(DriverLocation);
+            mainDriver = launchChrome();
         }
         else if(Browser == BrowserType.FIREFOX){
             mainDriver = launchFirefox();
         }
         else if(Browser == BrowserType.IE){
-            mainDriver = launchIE(DriverLocation);
+            mainDriver = launchIE();
         }
         else {
-            mainDriver = launchEdgeDriver(DriverLocation);
+            mainDriver = launchEdgeDriver();
         }
     }
     //Getter Method
@@ -36,19 +34,20 @@ public class BrowserLaunch {
         return mainDriver;
     }
     //Chrome
-    public static WebDriver launchChrome(String chromeDriverLocation){
-        System.setProperty("webdriver.chrome.driver", chromeDriverLocation);
+    public static WebDriver launchChrome(){
+        System.setProperty("webdriver.chrome.driver", "src\\main\\resources\\chromedriver.exe");
         WebDriver chromeDriver = new ChromeDriver();
         return chromeDriver;
     }
-    //FireFox - think this might actually need the gecko driver
+    //FireFox
     public static WebDriver launchFirefox(){
+        System.setProperty("webdriver.gecko.driver","src\\main\\resources\\geckodriver.exe");
         WebDriver fireFoxDriver = new FirefoxDriver();
         return fireFoxDriver;
     }
     //Internet Explorer
-    public static WebDriver launchIE(String IEDriverLocation){
-        System.setProperty("webdriver.ie.driver", IEDriverLocation);
+    public static WebDriver launchIE(){
+        System.setProperty("webdriver.ie.driver", "src\\main\\resources\\IE.exe");
         DesiredCapabilities capabilities =
                 DesiredCapabilities.internetExplorer();
         capabilities.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS,
@@ -57,8 +56,8 @@ public class BrowserLaunch {
         return IEDriver;
     }
     //Edge -- Currently needs some updating before its functional
-    public static WebDriver launchEdgeDriver(String EdgeDriverLocation){
-        System.setProperty("webdriver.edge.driver", EdgeDriverLocation);
+    public static WebDriver launchEdgeDriver(){
+        System.setProperty("webdriver.edge.driver", "src\\main\\resources\\Edge.exe");
         WebDriver edgeDriver = new EdgeDriver();
         return edgeDriver;
     }
