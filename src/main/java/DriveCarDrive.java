@@ -10,7 +10,7 @@ import java.io.FileNotFoundException;
  * Created by mesa1 on 6/09/2017.
  */
 public class DriveCarDrive {
-    private static final BrowserType browserInTest = BrowserType.CHROME;
+    private static final BrowserType browserInTest = BrowserType.IE;
     private static final String carMake = "Audi";
     private static final String carType = "RS4";
     private static final boolean used = true;

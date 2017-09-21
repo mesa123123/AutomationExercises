@@ -1,0 +1,78 @@
+Hey Peter,
+
+Here is http://exercism.io/ language resources.
+
+And here is the informal exercise list. It technically hasn't been published or revised but take a look and see what you can do.
+
+This was put together by Alex Irvine and Scott Rogers and is by no means definitive or even complete.
+
+If you'd like to research a few more things I'd look at speaking to them both and finding out what they would recommend
+- I'd also look at sharing you're github profile so folks can take a look at and review your work.
+
+Cheers,
+
+
+The TradeMe website provides a wealth of functionality in a web interface and accessible API that most people are familiar with as users.
+This provides an excellent technical context for initiating, training and trialing Test Engineers.
+The following tasks outlined provide a simple extensible training framework.
+------------------------------------------------------------------------------------------------------------------------
+Task 1 - Find me a car!
+
+Objective:
+
+Using the TradeMe web interface, find me the 'best' [Audi] [RS4].
+This interface provides a 'soft target' with many buttons, lists and edit boxes to interact with.
+
+------------------------------------------------------------------------------------------------------------------------
+Task 2 - Extend the example
+
+Objective:
+
+A working script has been developed and demonstrated in Task 1. Add a specification to the scenario.
+I like to specify the colour. TradeMe doesn't provide a filter for colour, and using it in the Keyword search doesn't always work.
+Some careful thinking and a lot of code may be required! Where is colour reliably presented in the listing?
+
+-----------------------------------------------------------------------------------------------------------------------
+Task 3 - Now radically change it
+
+Objective:
+
+Change the car from an Audi RS4 to a Toyota Hiace!
+
+------------------------------------------------------------------------------------------------------------------------
+Task 4 - Change the browser
+
+Objective:
+
+Repeat Task 2, with a different browser
+
+Watch out for:
+------------------------------------------------------------------------------------------------------------------------
+Task 5 - Change the tool
+
+Objective:
+
+Repeat Tasks 2 and 5, with a different tool.
+[Ideas: Selenium, UFT, UFT Pro, WATIR/Rails, Python, Powershell, soapUI]
+
+------------------------------------------------------------------------------------------------------------------------
+Task 6 - Off with its head!
+
+Objective:
+
+Repeat Tasks 2 and 5, but this time use a non-GUI approach.
+TradeMe API, soapUI, powershell, curl...
+
+------------------------------------------------------------------------------------------------------------------------
+Task 7 - On the go
+
+Objective:
+
+Repeat Tasks 2 and 5, but this time use the TradeMe mobile app
+
+------------------------------------------------------------------------------------------------------------------------
+Task 8 - Lrn2Read
+
+Objective:
+
+Can you comprehend someone elses (uncommented) code?

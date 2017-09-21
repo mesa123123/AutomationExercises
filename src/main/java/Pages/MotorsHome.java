@@ -27,6 +27,10 @@ public class MotorsHome extends TradeMeHomePage {
 
         public static WebElement BodyStyle(WebDriver driver){ return driver.findElement(By.id("5"));}
 
+        public static WebElement confirmSearch(WebDriver driver) {
+            return driver.findElement(By.className("button27 spriteButton search-button motorsSearchButton"));
+        }
+
         public static WebElement CarMake(WebDriver driver){return driver.findElement(By.id("14"));}
         //I'm unsure about how this works at mitigating errors, I think I'll need to come back to this one
         public static WebElement CarModel(WebDriver driver){
