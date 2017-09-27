@@ -1,7 +1,6 @@
 package Pages;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -11,14 +10,10 @@ import org.openqa.selenium.WebElement;
 public class MotorsHome extends TradeMeHomePage {
         public static String motorsURL = "https://www.trademe.co.nz/motors";
 
-        public static void ToMotors(WebDriver driver){
-                try{
+        public static void ToMotors(WebDriver driver) throws InterruptedException {
                     WebElement MotorsTab = driver.findElement(By.id("SearchTabs1_MotorsAnchor"));
                     MotorsTab.click();
-                } catch(NoSuchElementException e){
-                    TradeMeHomePage.ReturnHome(driver);
-                    ToMotors(driver);
-                }
+
         }
 
         public static WebElement sideSearchBar(WebDriver driver){
@@ -31,29 +26,27 @@ public class MotorsHome extends TradeMeHomePage {
             return driver.findElement(By.className("button27 spriteButton search-button motorsSearchButton"));
         }
 
-        public static WebElement CarMake(WebDriver driver){return driver.findElement(By.id("14"));}
+        public static WebElement CarMake(WebDriver driver){
+            WebElement makeBox = driver.findElement(By.name("14"));
+            return makeBox;
+        }
         //I'm unsure about how this works at mitigating errors, I think I'll need to come back to this one
         public static WebElement CarModel(WebDriver driver){
-            WebElement modelBox = driver.findElement(By.id("15"));
-            if(!modelBox.isEnabled()){
-                return CarMake(driver);
-            }
-            else {
-                return modelBox;
-            }
+            WebElement modelBox = driver.findElement(By.name("15"));
+            return modelBox;
         }
 
         public static WebElement[] PriceRange(WebDriver driver){
             WebElement[] priceRange = new WebElement[2];
-            priceRange[0] = driver.findElement(By.id("min-18"));
-            priceRange[1] = driver.findElement(By.id("max-18"));
+            priceRange[0] = driver.findElement(By.name("min-18"));
+            priceRange[1] = driver.findElement(By.name("max-18"));
             return priceRange;
         }
 
         public static WebElement[] YearRange(WebDriver driver){
             WebElement[] yearRange = new WebElement[2];
-            yearRange[0] = driver.findElement(By.id("min-24"));
-            yearRange[1] = driver.findElement(By.id("max-24"));
+            yearRange[0] = driver.findElement(By.name("min-24"));
+            yearRange[1] = driver.findElement(By.name("max-24"));
             return yearRange;
         }
 

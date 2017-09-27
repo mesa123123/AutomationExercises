@@ -2,7 +2,9 @@ package Exercises;
 
 import Pages.MotorsHome;
 import Pages.TradeMeHomePage;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
 
@@ -13,14 +15,20 @@ import org.openqa.selenium.support.ui.Select;
  * that runs the suite to get back the optimal answer for each characteristic of car
  */
 public class SecondExercise {
+
+    private WebElement searchForm;
+    private static Select carMakeSelection;
+    private static Select carModelSelection;
+
     public static void Run(WebDriver driver, String carMake, String carModel) throws InterruptedException {
         driver.get(TradeMeHomePage.baseURL);
-
         MotorsHome.ToMotors(driver);
-        Select carMakeSelection = new Select(MotorsHome.CarMake(driver));
+        carMakeSelection = new Select(MotorsHome.CarMake(driver));
         carMakeSelection.selectByVisibleText(carMake);
-        Select carModelSelection = new Select(MotorsHome.CarModel(driver));
+        carModelSelection = new Select(MotorsHome.CarModel(driver));
         carModelSelection.selectByVisibleText(carModel);
+        WebElement searchForm = driver.findElement(By.id("sidebarSearch"));
+        searchForm.submit();
 
     }
 }
