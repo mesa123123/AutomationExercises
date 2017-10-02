@@ -55,10 +55,10 @@ public class MotorsSearchResult {
     }
 
     public static void SwitchViewStyle(WebDriver driver){
-        WebElement buttonStateCheck = driver.findElement(By.cssSelector("#ListingsTitle_ListingViewBar_listViewTab_icon_a"));
+        WebElement buttonStateCheck = driver.findElement(By.cssSelector("ListingsTitle_ListingViewBar_listViewTab_icon_a"));
         String buttonClassName = buttonStateCheck.getAttribute("class");
         if (buttonClassName.equals("btn btn-checked"))
-            driver.findElement(By.cssSelector("#ListingsTitle_ListingViewBar_galleryViewTab_icon_a")).click();
+            driver.findElement(By.cssSelector("ListingsTitle_ListingViewBar_galleryViewTab_icon_a")).click();
         else
             buttonStateCheck.click();
     }
