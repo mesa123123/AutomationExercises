@@ -27,13 +27,11 @@ public class MotorsHome extends TradeMeHomePage {
         }
 
         public static WebElement CarMake(WebDriver driver){
-            WebElement makeBox = driver.findElement(By.name("14"));
-            return makeBox;
+            return driver.findElement(By.name("14"));
         }
         //I'm unsure about how this works at mitigating errors, I think I'll need to come back to this one
         public static WebElement CarModel(WebDriver driver){
-            WebElement modelBox = driver.findElement(By.name("15"));
-            return modelBox;
+            return driver.findElement(By.name("15"));
         }
 
         public static WebElement[] PriceRange(WebDriver driver){

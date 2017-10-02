@@ -1,6 +1,7 @@
 package Exercises;
 
 import Pages.MotorsHome;
+import Pages.MotorsSearchResult;
 import Pages.TradeMeHomePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -19,6 +20,8 @@ public class SecondExercise {
     private WebElement searchForm;
     private static Select carMakeSelection;
     private static Select carModelSelection;
+    private static String sortCharacteristic = "Highest Buy Now";
+    // Highest Buy Now -- Oldest
 
     public static void Run(WebDriver driver, String carMake, String carModel) throws InterruptedException {
         driver.get(TradeMeHomePage.baseURL);
@@ -29,6 +32,8 @@ public class SecondExercise {
         carModelSelection.selectByVisibleText(carModel);
         WebElement searchForm = driver.findElement(By.id("sidebarSearch"));
         searchForm.submit();
-
+        WebElement sortOrder = MotorsSearchResult.SortOrder(driver, sortCharacteristic);
+        sortOrder.click();
+        Thread.sleep(3000);
     }
 }
